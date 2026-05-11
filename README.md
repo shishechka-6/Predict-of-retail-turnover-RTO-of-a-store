@@ -52,9 +52,7 @@ HSE/
 │   └── test.csv              # шаблон / финальный submission (new_id, rto)
 │
 ├── solution_best.ipynb       # лучшее решение (94.88) — OOF-стекинг
-├── solution.ipynb            # baseline pipeline (~93) — без stacking
 │
-├── install.sh                # установка зависимостей (+ фикс libomp на macOS)
 ├── requirements.txt
 └── README.md
 ```
