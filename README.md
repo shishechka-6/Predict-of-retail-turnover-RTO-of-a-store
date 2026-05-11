@@ -33,12 +33,10 @@
 
 ## Стек проекта
 
-- **Python 3.12**
 - **pandas / numpy** — обработка данных
 - **LightGBM 4.6** — основные модели, native категориальные признаки
 - **CatBoost 1.2** — модель с native обработкой high-cardinality категориальных (`Населённый пункт`: 3 512 значений)
 - **scipy.optimize** — Nelder-Mead с multi-start для подбора весов ансамбля
-- **Jupyter Notebook** — основной формат поставки решения
 
 ---
 
@@ -68,11 +66,7 @@ cd pyaterochka-rto-forecast
 python3 -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
 
-chmod +x install.sh
-./install.sh
 ```
-
-Скрипт устанавливает зависимости из `requirements.txt` и на macOS патчит rpath `lib_lightgbm.dylib` через `install_name_tool`, чтобы LightGBM нашёл `libomp.dylib` (поставляемую вместе с scikit-learn). Без этого LightGBM не загружается на Apple Silicon без Homebrew.
 
 ---
 
@@ -154,5 +148,4 @@ test.csv
 |------|------------|
 | `solution_best.ipynb` | 7 секций: imports → данные → feature engineering → обёртки моделей → OOF-стекинг → стекер + клиппинг → финальные модели + сабмишен |
 | `solution.ipynb` | Упрощённая версия без стекинга — для понимания базового пайплайна |
-| `install.sh` | Установщик зависимостей с автопатчем `libomp` на macOS |
 | `requirements.txt` | pandas, numpy, scikit-learn, scipy, lightgbm, catboost |
